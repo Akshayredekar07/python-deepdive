@@ -1,4 +1,4 @@
-# **Python Functions **
+# **Python Functions**
 
 ## **3.0 The One Big Idea**
 
@@ -1592,4 +1592,3 @@ Cross-references used while writing these notes (June 2026 snapshot):
 - LangChain Cycles integration (callback + middleware) — https://runcycles.io/how-to/integrating-cycles-with-langchain
 - PEP 8 — Programming Recommendations (lambda guidance) — https://peps.python.org/pep-0008/
 
-End of Stage 3.
