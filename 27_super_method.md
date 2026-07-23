@@ -12,7 +12,7 @@ super().attribute       # access a parent class variable
 
 The big advantage of `super()` over hardcoding the parent name is that it respects the **method resolution order (MRO)**. In single inheritance it almost always refers to the immediate parent. In multiple inheritance, it walks the chain in the correct order, so your code keeps working if the inheritance graph changes.
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: A simple child uses super() to call the parent
@@ -126,7 +126,7 @@ class Child(Parent):
         self.y = y
 ```
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Hardcoded call breaks if parent is renamed
@@ -295,7 +295,7 @@ print(c.child_field)
 
 If you forget `super().__init__()`, the parent's fields do not exist on the child object. This is one of the most common bugs in inheritance-based code.
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Standard pattern — extend parent constructor
@@ -499,7 +499,7 @@ Rule of thumb:
 - For **class variables** (static variables), use `super().var` or `self.var` — both work.
 - For **instance variables**, always use `self.var`. `super().var` does not work because the parent's `self` is not the child's.
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Reuse a parent method and add more
@@ -767,7 +767,7 @@ Again, in real code, you almost never need to call a static method via `super()`
 | Class method | class, static methods | constructor, instance methods (no `self`) |
 | Static method | (nothing by default) | (everything, without manual `super(Sub, Sub).x()` workaround) |
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: From constructor — call all four kinds
@@ -981,7 +981,7 @@ c m1
 
 This pattern is useful when a class wants to skip exactly one level, but still respect the rest of the MRO.
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Call by name to skip a level
@@ -1124,7 +1124,7 @@ A m1
 
 The MRO visits A **once** even though both B and C inherit from it. This is what `super()` is designed to handle — without it, you would have to write `A.m1(self)` manually, and you would have to know where A is in the chain.
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Diamond with super() in each link
@@ -1353,7 +1353,7 @@ UserService()
 [UserService] user-specific setup done
 ```
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Pydantic-style chain
@@ -1504,7 +1504,7 @@ print(m, type(m).__name__)
 
 For most everyday work, you do not need to touch `__new__` or `__init_subclass__`. They are there for library authors.
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: __init_subclass__ runs at class definition
@@ -1666,7 +1666,7 @@ class C:
 
 This is rarely a real problem, but worth knowing.
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Forgetting super().__init__

@@ -86,7 +86,7 @@ class Process:
         pass
 ```
 
-**Example 8: DBMS — Database and Table**
+**Example 8: Database and Table**
 
 A `Table` has no independent existence outside the `Database` it belongs to.
 
@@ -96,7 +96,7 @@ class Database:
         pass
 ```
 
-**Example 9: Cloud — VPC and Subnet**
+**Example 9: VPC and Subnet**
 
 A `Subnet` cannot exist without a `VPC` (Virtual Private Cloud) to belong to — this mirrors how AWS/GCP model these resources.
 
@@ -181,7 +181,7 @@ class Settings:
             print("case_sensitive=True, env_file='.env'")
 ```
 
-**Example — DSA: LinkedList with a Node inner class**
+**Example — LinkedList with a Node inner class**
 
 ```python
 class LinkedList:
@@ -196,7 +196,7 @@ class LinkedList:
             self.next = None
 ```
 
-**Example — DBMS: Connection with a nested Cursor class**
+**Example — Connection with a nested Cursor class**
 
 ```python
 class Connection:
@@ -275,7 +275,7 @@ Node created with data=10
 10
 ```
 
-**DBMS — creating a Cursor through a Connection (Way 2 style)**
+**creating a Cursor through a Connection (Way 2 style)**
 
 ```python
 cur = Connection("postgres://localhost/mydb").Cursor()
@@ -411,7 +411,7 @@ Response object created with status=200
 Sending response with status 200
 ```
 
-**Cloud — an EC2Instance class with Volume and SecurityGroup inner classes**
+**an EC2Instance class with Volume and SecurityGroup inner classes**
 
 ```python
 class EC2Instance:
@@ -474,7 +474,7 @@ The chained call walks the full hierarchy: `Outer` → `InnerClass` → `InnerIn
 
 ### **More Examples — Multi-Level Nesting in Real Systems**
 
-**DBMS — Database → Table → Column**
+**Database → Table → Column**
 
 A `Column` only makes sense inside a `Table`, which only makes sense inside a `Database`. This three-level chain mirrors how a schema is actually structured.
 
@@ -505,7 +505,7 @@ Column object created
 Nested column inside table inside database
 ```
 
-**Cloud — VPC → Subnet → Instance**
+**VPC → Subnet → Instance**
 
 ```python
 class VPC:
@@ -794,7 +794,7 @@ App: OrdersAPI
 debug=True, env_file=.env
 ```
 
-### **Example — DSA: LinkedList that auto-creates its head Node (data structures)**
+### **Example — LinkedList that auto-creates its head Node (data structures)**
 
 ```python
 class LinkedList:
@@ -822,7 +822,7 @@ Node object created with data=5
 Head value: 5
 ```
 
-### **Example — DBMS: ConnectionPool that auto-creates a Connection (database engineering)**
+### **Example — ConnectionPool that auto-creates a Connection (database engineering)**
 
 ```python
 class ConnectionPool:
@@ -853,7 +853,7 @@ Connection object created for mysql://localhost/orders
 [mysql://localhost/orders] running: SELECT COUNT(*) FROM orders
 ```
 
-### **Example — Cloud: CloudResourceManager that auto-creates a Bucket (cloud/DevOps)**
+### **Example — CloudResourceManager that auto-creates a Bucket (cloud/DevOps)**
 
 ```python
 class CloudResourceManager:
@@ -886,7 +886,7 @@ Project: my-cloud-project
 Bucket region: us-east-1
 ```
 
-### **Example — Networking: HTTPClient that auto-creates a RetryPolicy (networking)**
+### **Example — HTTPClient that auto-creates a RetryPolicy (networking)**
 
 ```python
 class HTTPClient:
@@ -1020,7 +1020,7 @@ The `cal` function is defined once inside `m1`, then called three times with dif
 - If a piece of logic is used **repeatedly within one method**, use a **nested method**.
 - If a piece of logic is used **repeatedly across methods of the same class**, use a **regular method** of the class.
 
-### **A Real-World Example — Price Calculation**
+### **Price Calculation**
 
 A nested method is a natural way to express "first apply discount, then apply tax" without duplicating the math:
 
@@ -1053,7 +1053,7 @@ The nested methods `apply_discount` and `apply_tax` are private to `calculate_fi
 
 ## **More Real-World Nested Method Examples — Across Software Engineering Domains**
 
-### **Example — DSA: Binary Search with a nested comparison helper**
+### **Example — Binary Search with a nested comparison helper**
 
 The nested `mid_check` avoids repeating the same comparison logic across multiple recursive calls.
 
@@ -1083,7 +1083,7 @@ print(binary_search(numbers, 5))
 -1
 ```
 
-### **Example — Networking: Retry-with-backoff using a nested attempt function**
+### **Example — Retry-with-backoff using a nested attempt function**
 
 A common real pattern: retry an HTTP/socket call with exponential backoff, without duplicating the "try, catch, wait" block for every attempt.
 
@@ -1116,7 +1116,7 @@ Attempt 3: connecting to https://api.example.com/data
 200 OK
 ```
 
-### **Example — DBMS: Building a dynamic WHERE clause with a nested helper**
+### **Example — Building a dynamic WHERE clause with a nested helper**
 
 Query-builder code often repeats the "condition + AND" pattern; a nested method keeps it in one place.
 
@@ -1138,7 +1138,7 @@ print(query)
 SELECT * FROM users WHERE status = 'active' AND role = 'admin'
 ```
 
-### **Example — OS/File Processing: Reading multiple log files with a nested line-parser**
+### **Example — Reading multiple log files with a nested line-parser**
 
 ```python
 def process_logs(file_names):
@@ -1164,7 +1164,7 @@ Processing error.log
    ERROR.LOG LINE2
 ```
 
-### **Example — Cloud/DevOps: Validating resource tags with a nested validator**
+### **Example — Validating resource tags with a nested validator**
 
 ```python
 def deploy_resource(name, tags):
@@ -1188,7 +1188,7 @@ Deploying web-server-1
    team: platform (ok)
 ```
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Inner class with one method
@@ -1371,7 +1371,7 @@ GET /users with headers {'Authorization': 'Bearer abc123'}
 ```
 
 ```python
-# Example 10: DBMS — Table class with an inner IndexError-style class for missing rows
+# Example 10: Table class with an inner IndexError-style class for missing rows
 class Table:
     def __init__(self, name):
         self.name = name
@@ -1400,7 +1400,7 @@ Row 99 not found in table
 ```
 
 ```python
-# Example 11: Cloud — recursive nested method to compute total storage cost
+# Example 11: recursive nested method to compute total storage cost
 def calculate_storage_bill(buckets):
     def cost_for(size_gb, rate_per_gb=0.02):
         return round(size_gb * rate_per_gb, 2)

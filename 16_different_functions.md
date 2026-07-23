@@ -1571,24 +1571,4 @@ max(items, key=lambda x: x.score)
 
 If you can answer all ten, Stage 3 is solid — Stage 4 (closures) will formalize exactly why the factories and lambdas above remember the values they capture.
 
----
-
-## **3.12 Source Notes**
-
-Cross-references used while writing these notes (June 2026 snapshot):
-
-- Real Python — Python Lambda Functions — https://realpython.com/python-lambda/
-- Trey Hunner — Overusing lambda expressions — https://treyhunner.com/2018/09/stop-writing-lambda-expressions/
-- GeeksforGeeks — Map Reduce and Filter Operations in Python — https://www.geeksforgeeks.org/python/map-reduce-and-filter-operations-in-python/
-- GeeksforGeeks — First-Class Functions — https://www.geeksforgeeks.org/python/first-class-functions-python/
-- GeeksforGeeks — Higher-Order Functions in Python — https://www.geeksforgeeks.org/python/higher-order-functions-in-python/
-- freeCodeCamp — First-Class Functions, Higher-Order Functions, and Closures — https://www.freecodecamp.org/news/first-class-functions-and-closures-in-python/
-- LearnPython.org — Map, Filter, Reduce — https://www.learnpython.org/en/Map,_Filter,_Reduce
-- introcs-python (Loyola) — Higher-Order Functions — https://introcs-python.cs.luc.edu/functional/higher_order.html
-- OxRSE Training — Higher-Order Functions — https://train.rse.ox.ac.uk/material/HPCu/software_architecture_and_design/functional/higher_order_functions_python
-- StackOverflow — Function as callback argument — https://stackoverflow.com/questions/6289646/
-- LangChain Reference — https://reference.langchain.com/python/langchain
-- LangChain Middleware Study Guide — https://colinmcnamara.com/blog/langchain-middleware-study-guide/
-- LangChain Cycles integration (callback + middleware) — https://runcycles.io/how-to/integrating-cycles-with-langchain
-- PEP 8 — Programming Recommendations (lambda guidance) — https://peps.python.org/pep-0008/
 

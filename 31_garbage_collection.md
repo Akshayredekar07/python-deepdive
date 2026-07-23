@@ -21,7 +21,7 @@ The programmer's job is **not** to destroy objects — the GC does that. The pro
 
 ### **What This Looks Like in Real Systems**
 
-**Example — DBMS: a leaked connection vs a properly released one**
+**Example — a leaked connection vs a properly released one**
 
 ```python
 # The "manual, error-prone" version — like C++, this is what GC saves you from
@@ -45,7 +45,7 @@ Connection opened: postgres://localhost/orders
 conn reassigned; Python will reclaim the old object automatically
 ```
 
-**Example — Cloud: a client object nobody explicitly destroys**
+**Example — a client object nobody explicitly destroys**
 
 ```python
 class S3ClientWrapper:
@@ -217,7 +217,7 @@ The programmer is not responsible to destroy objects explicitly. GC is responsib
 
 ### **The Destructor Pattern Applied to Real Resources**
 
-**Example — Networking: a socket connection class**
+**Example — a socket connection class**
 
 ```python
 class SocketConnection:
@@ -243,7 +243,7 @@ Sending 'PING' to 192.168.1.10:8080
 Socket to 192.168.1.10:8080 closed
 ```
 
-**Example — DBMS: a database connection class**
+**Example — a database connection class**
 
 ```python
 class DBConnection:
@@ -323,7 +323,7 @@ Session for request req-001 released back to pool
 Request handled, session cleaned up automatically
 ```
 
-**Example — Cloud: a cloud storage bucket client**
+**Example — a cloud storage bucket client**
 
 ```python
 class BucketClient:
@@ -371,7 +371,7 @@ Each `Test()` call creates a new object. At program end, the GC destroys both, s
 
 ### **Multiple Real-World Objects, Same Pattern**
 
-**Example — DSA: multiple cache objects created and destroyed**
+**Example — multiple cache objects created and destroyed**
 
 ```python
 class LRUCacheNode:
@@ -397,7 +397,7 @@ Cache node evicted: user:2
 both cache nodes evicted
 ```
 
-**Example — Networking: multiple simultaneous client connections**
+**Example — multiple simultaneous client connections**
 
 ```python
 class ClientConnection:
@@ -425,7 +425,7 @@ Client B disconnected
 Client C disconnected
 ```
 
-**Example — Cloud: multiple worker instances spun up and torn down**
+**Example — multiple worker instances spun up and torn down**
 
 ```python
 class WorkerInstance:
@@ -508,7 +508,7 @@ The rule, in plain English:
 
 ### **Shared References in Real Systems**
 
-**Example — DBMS: a shared connection pool referenced by multiple services**
+**Example — a shared connection pool referenced by multiple services**
 
 ```python
 class SharedPool:
@@ -541,7 +541,7 @@ SharedPool 'orders-pool' destroyed
 last reference gone, pool is now destroyed
 ```
 
-**Example — Cloud: a shared config object used by several handlers**
+**Example — a shared config object used by several handlers**
 
 ```python
 class CloudConfig:
@@ -604,7 +604,7 @@ Internally, the PVM maintains one extra reference for `self` while a method is r
 
 ### **Reference Counting in Practical Debugging**
 
-**Example — DSA: verifying a node is fully detached from a tree**
+**Example — verifying a node is fully detached from a tree**
 
 ```python
 import sys
@@ -626,7 +626,7 @@ references to root before detaching: 3
 references to root after detaching one alias: 2
 ```
 
-**Example — Networking: checking if a connection object is still held anywhere**
+**Example — checking if a connection object is still held anywhere**
 
 ```python
 import sys
@@ -676,7 +676,7 @@ Three `Test` objects are created. The list holds references to all three. When t
 
 ### **Lists of Real Resources**
 
-**Example — DBMS: a connection pool implemented as a list**
+**Example — a connection pool implemented as a list**
 
 ```python
 class PooledConnection:
@@ -704,7 +704,7 @@ PooledConnection 2 closed
 pool shut down, all connections closed
 ```
 
-**Example — Networking: a list of open sockets closed together on shutdown**
+**Example — a list of open sockets closed together on shutdown**
 
 ```python
 class OpenSocket:
@@ -732,7 +732,7 @@ Stopped listening on port 8002
 server shutdown complete
 ```
 
-**Example — Cloud: a fleet of instances torn down as a list**
+**Example — a fleet of instances torn down as a list**
 
 ```python
 class Instance:
@@ -806,7 +806,7 @@ The full lifecycle of an object in Python is:
 
 If the program ends before step 3, the PVM still cleans up: it tears down all remaining objects before shutting down.
 
-## **Try it in Jupyter — Small Examples**
+## **Examples**
 
 ```python
 # Example 1: Destructor runs at program end
@@ -1009,7 +1009,7 @@ all handlers released the connection
 ```
 
 ```python
-# Example 10: OS — cleaning up a batch of temp files with a list
+# Example 10: cleaning up a batch of temp files with a list
 class TempResource:
     def __init__(self, name):
         self.name = name
@@ -1035,7 +1035,7 @@ batch job finished, temp resources freed
 ```
 
 ```python
-# Example 11: DBMS — a transaction object that rolls back on destruction if not committed
+# Example 11: a transaction object that rolls back on destruction if not committed
 class Transaction:
     def __init__(self, txn_id):
         self.txn_id = txn_id
@@ -1067,7 +1067,7 @@ transaction txn-2 rolled back
 ```
 
 ```python
-# Example 12: Cloud — a lease-style object that releases a reserved resource on GC
+# Example 12: a lease-style object that releases a reserved resource on GC
 class ReservedGPU:
     def __init__(self, gpu_id):
         self.gpu_id = gpu_id

@@ -27,7 +27,7 @@ Hello from Child
 
 The `Child(Parent)` syntax is what makes it inheritance. The class name in the parentheses is the parent.
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: A parent that knows one trick
@@ -172,7 +172,7 @@ A bug fix in the base `Loan` class now propagates to every child automatically. 
 
 This is exactly how the real world uses inheritance. `SQLAlchemy.declarative_base` provides common ORM behaviour. `FastAPI`'s `BaseModel` (via Pydantic) provides common validation. `Django`'s `models.Model` provides common database fields. `unittest.TestCase` provides common test scaffolding. In every case, the base class holds shared behaviour, and subclasses add specifics.
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: A small base class with shared setup
@@ -370,7 +370,7 @@ Diagram:
 
 This is the shape you will use most of the time in real code. A `User` class, a `Product` class, a `RequestHandler` class — most of your classes have one parent.
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Single — most common shape
@@ -523,7 +523,7 @@ Dog gives birth to live young
 Labrador is barking
 ```
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Three levels, each adds one thing
@@ -685,7 +685,7 @@ Mammal   Bird
 
 This pattern shows up in real frameworks: `unittest.TestCase` has multiple specialised subclasses; `tkinter.Frame` and `tkinter.Toplevel` both inherit from a common widget base; SQLAlchemy's declarative base has many model classes hanging off it.
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Shape family
@@ -866,7 +866,7 @@ Parent1 method
 Child method
 ```
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Two capabilities, one class
@@ -989,7 +989,7 @@ Diagram example:
 
 This is the most common shape in real codebases. It is also where things get tricky with method resolution, so it is worth keeping hierarchies shallow.
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Diamond — common real-world shape
@@ -1068,7 +1068,7 @@ class B(A):
 
 Both raise `TypeError: inconsistent method resolution order` or `NameError` depending on the exact shape. The rule is simple: a class cannot be its own ancestor.
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Direct cycle
@@ -1154,7 +1154,7 @@ A quick note because the words are easy to mix up:
 - **Overriding** — child class replaces a parent method with its own. Supported fully in Python.
 - **Overloading** — same method name, different parameter list. Python does **not** support this the way Java does. Use default arguments or `*args` instead. (Covered in the polymorphism / operator overloading file.)
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Override and call the parent too
@@ -1290,7 +1290,7 @@ Marks=90
 
 The full picture of `super()` is in the dedicated `super()` file. For inheritance basics, the key is just: **call `super().__init__(...)` as the first line of the child constructor** whenever the parent has its own `__init__` that sets fields you need.
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Child without __init__ — parent's runs
@@ -1397,7 +1397,7 @@ The full MRO algorithm is interesting academically but rarely needed in day-to-d
 
 Everything else, including the C3 linearization details, is covered in the references at the end of this file.
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Inspect MRO

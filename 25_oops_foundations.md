@@ -38,7 +38,7 @@ My Marks are: 80
 
 `Student("Durga", 101, 80)` creates the object. `s1` is the reference variable. `s1.talk()` calls the method on that object.
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: A Point in 2D
@@ -148,7 +148,7 @@ Two rules to follow:
 
 The name `self` is a convention, not a keyword. You could call it `this` or `me`, but every Python developer and linter expects `self`, so do not rename it.
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: self is the current object
@@ -406,7 +406,7 @@ class Movie:
 
 This pattern (constructor for setup, regular method for behavior) is what you will see in almost every real Python class — a Django model, a Pydantic schema, a SQLAlchemy ORM class, a request handler in FastAPI. The constructor collects the data; the methods use it.
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Constructor with default values
@@ -711,7 +711,7 @@ t2: 10 20
 
 This is the single most important property of instance variables — they belong to one object, not to the class. Same logic applies in any framework that wraps Python objects: an attribute you set on a Django model instance does not appear on a different one.
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Declaring instance variables in 3 places
@@ -1079,7 +1079,7 @@ What this shows:
 - Setting `Test.x = 888` updates the class variable, so both `t1.x` and `t2.x` now read `888`.
 - Setting `t1.y = 999` only affects `t1`. `t2.y` stays `20`.
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Simple static variable shared by everyone
@@ -1266,7 +1266,7 @@ NameError: name 'a' is not defined
 
 Local variables in Python are subject to the same scoping rules as anywhere else — they live and die inside their function. Using `self.a = ...` would have made it an instance variable instead, visible across the whole class.
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Local variable does not leak out
@@ -1446,7 +1446,7 @@ Student branch: 23
 - No decorator.
 - Called using the object reference.
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Simple instance method
@@ -1628,7 +1628,7 @@ Total no of objects created: 3
 
 This is the same pattern used by SQLAlchemy, Django ORM, pytest plugins, and many other frameworks to track their internal state.
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Class method as alternative constructor
@@ -1817,7 +1817,7 @@ The sum: 94
 Product of nums: 3420
 ```
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Pure math helper
@@ -2115,7 +2115,7 @@ Things to notice:
 - **Getter**: when other code needs to read the value, or when the value is computed from other state.
 - **`@property`**: when you want a method to look like an attribute from the outside (read-only or validated).
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Simple setter with validation
@@ -2381,7 +2381,7 @@ print(a.balance)
 
 This is the closest Python gets to "read-only from outside". The attribute is hidden, the getter is exposed, and the only way to change the value is through a method that enforces rules.
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Public attribute (no prefix)
@@ -2631,7 +2631,7 @@ print(t1 is t3)   # True
 
 Knowing that several variables can point at one object is what makes shared mutable state in Python both powerful and easy to misuse. The golden rule: never let two variables that look different both edit the same object unless that is what you meant.
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: One class calls another's method

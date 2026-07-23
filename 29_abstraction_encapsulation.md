@@ -88,7 +88,7 @@ class UserRepository(ABC):
         pass
 ```
 
-**DSA — a stack contract that every stack implementation must satisfy**
+**a stack contract that every stack implementation must satisfy**
 
 ```python
 from abc import ABC, abstractmethod
@@ -99,7 +99,7 @@ class Stack(ABC):
         pass
 ```
 
-**Networking — a socket handler contract for sending data**
+**a socket handler contract for sending data**
 
 ```python
 from abc import ABC, abstractmethod
@@ -110,7 +110,7 @@ class Connection(ABC):
         pass
 ```
 
-**OS — a process scheduler contract**
+**a process scheduler contract**
 
 ```python
 from abc import ABC, abstractmethod
@@ -121,7 +121,7 @@ class Scheduler(ABC):
         pass
 ```
 
-**DBMS — a query builder contract**
+**a query builder contract**
 
 ```python
 from abc import ABC, abstractmethod
@@ -132,7 +132,7 @@ class QueryBuilder(ABC):
         pass
 ```
 
-**Cloud — a deployment contract for infrastructure providers**
+**a deployment contract for infrastructure providers**
 
 ```python
 from abc import ABC, abstractmethod
@@ -335,7 +335,7 @@ Accessing entity 1
 Akshay
 ```
 
-**DSA — an abstract sorting algorithm with a shared helper and one abstract step**
+**an abstract sorting algorithm with a shared helper and one abstract step**
 
 ```python
 from abc import ABC, abstractmethod
@@ -369,7 +369,7 @@ print(sorter.is_sorted(result))
 True
 ```
 
-**Networking — an abstract protocol handler with a shared logging method**
+**an abstract protocol handler with a shared logging method**
 
 ```python
 from abc import ABC, abstractmethod
@@ -396,7 +396,7 @@ Packet size: 14 bytes
 Parsing as HTTP request
 ```
 
-**OS — an abstract process manager with a shared utility method**
+**an abstract process manager with a shared utility method**
 
 ```python
 from abc import ABC, abstractmethod
@@ -425,7 +425,7 @@ Forking process: worker
 Running: worker
 ```
 
-**Cloud — an abstract cloud resource with a shared tagging method**
+**an abstract cloud resource with a shared tagging method**
 
 ```python
 from abc import ABC, abstractmethod
@@ -678,7 +678,7 @@ service.send("akshay@example.com", "Your order shipped")
 Sending email to akshay@example.com: Your order shipped
 ```
 
-**DSA — a cache interface with two eviction strategies**
+**a cache interface with two eviction strategies**
 
 ```python
 from abc import ABC, abstractmethod
@@ -716,7 +716,7 @@ print(cache.get("a"))
 1
 ```
 
-**Networking — a socket client interface for TCP and UDP**
+**a socket client interface for TCP and UDP**
 
 ```python
 from abc import ABC, abstractmethod
@@ -754,7 +754,7 @@ Opening TCP connection to 127.0.0.1:8080
 Closing TCP connection
 ```
 
-**DBMS — a connection interface for two SQL backends**
+**a connection interface for two SQL backends**
 
 ```python
 from abc import ABC, abstractmethod
@@ -781,7 +781,7 @@ conn.execute("SELECT * FROM students")
 Running on Postgres: SELECT * FROM students
 ```
 
-**Cloud — a storage interface for three providers**
+**a storage interface for three providers**
 
 ```python
 from abc import ABC, abstractmethod
@@ -861,7 +861,7 @@ Keyboard
 2
 ```
 
-**DSA — a public node value in a linked list**
+**a public node value in a linked list**
 
 ```python
 class Node:
@@ -877,7 +877,7 @@ print(n.value)
 10
 ```
 
-**Networking — a public host and port on a request object**
+**a public host and port on a request object**
 
 ```python
 class HttpRequest:
@@ -893,7 +893,7 @@ print(req.host, req.port)
 api.example.com 443
 ```
 
-**OS — a public process name**
+**a public process name**
 
 ```python
 class Process:
@@ -951,7 +951,7 @@ print(settings.show_db_url())
 postgresql://localhost:5432/app
 ```
 
-**DSA — a protected internal list backing a queue**
+**a protected internal list backing a queue**
 
 ```python
 class Queue:
@@ -973,7 +973,7 @@ print(pq._items)
 [1, 5]
 ```
 
-**Networking — a protected retry count used by subclasses**
+**a protected retry count used by subclasses**
 
 ```python
 class BaseClient:
@@ -992,7 +992,7 @@ print(client.show_retries())
 3
 ```
 
-**OS — a protected scheduler queue used by subclasses**
+**a protected scheduler queue used by subclasses**
 
 ```python
 class BaseScheduler:
@@ -1053,7 +1053,7 @@ print(session.get_token())
 abc123
 ```
 
-**DSA — a private internal array in a custom Stack**
+**a private internal array in a custom Stack**
 
 ```python
 class Stack:
@@ -1076,7 +1076,7 @@ print(s.peek())
 20
 ```
 
-**Networking — a private checksum on a packet**
+**a private checksum on a packet**
 
 ```python
 class Packet:
@@ -1095,7 +1095,7 @@ print(pkt.get_checksum())
 50
 ```
 
-**DBMS — private credentials on a connection pool**
+**private credentials on a connection pool**
 
 ```python
 class ConnectionPool:
@@ -1288,7 +1288,7 @@ akshay
 ***hidden***
 ```
 
-**DSA — hiding the internal list of a Stack so callers cannot mutate it directly**
+**hiding the internal list of a Stack so callers cannot mutate it directly**
 
 ```python
 class Stack:
@@ -1316,7 +1316,7 @@ print(s.pop())
 2
 ```
 
-**Networking — hiding a session token, exposing only an is_valid check**
+**hiding a session token, exposing only an is_valid check**
 
 ```python
 class Session:
@@ -1334,7 +1334,7 @@ print(session.is_valid())
 True
 ```
 
-**OS — hiding a raw file descriptor behind a read method**
+**hiding a raw file descriptor behind a read method**
 
 ```python
 class FileHandle:
@@ -1352,7 +1352,7 @@ print(handle.read())
 Reading from fd 7
 ```
 
-**Cloud — hiding a secret access key, exposing only a masked identifier**
+**hiding a secret access key, exposing only a masked identifier**
 
 ```python
 class CloudCredentials:
@@ -1403,7 +1403,7 @@ AKIA123
 | Attribute is for internal use / subclasses | Protected. |
 | Attribute must not be accessible from outside at all | Private (combined with `@property` for controlled access). |
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: A simple abstract class

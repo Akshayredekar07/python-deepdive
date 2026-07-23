@@ -106,7 +106,7 @@ True
 
 **More Examples — `__lt__` / `__gt__` in Real Development**
 
-DSA: job scheduling with a min-heap. `heapq` compares items with `<`, so overloading `__lt__` lets you push custom objects straight into a heap ordered by priority.
+job scheduling with a min-heap. `heapq` compares items with `<`, so overloading `__lt__` lets you push custom objects straight into a heap ordered by priority.
 
 ```python
 import heapq
@@ -160,7 +160,7 @@ print(sorted(checks))
 [/health -> 5ms, /orders -> 45ms, /users -> 220ms]
 ```
 
-Cloud: comparing cloud instance options by hourly cost so you can pick the cheapest instance type that meets a minimum vCPU requirement.
+comparing cloud instance options by hourly cost so you can pick the cheapest instance type that meets a minimum vCPU requirement.
 
 ```python
 class CloudInstance:
@@ -226,7 +226,7 @@ False
 
 **More Examples — `__le__` / `__ge__` in Real Development**
 
-DBMS: comparing two schema/migration versions to decide whether a migration has already been applied.
+comparing two schema/migration versions to decide whether a migration has already been applied.
 
 ```python
 class MigrationVersion:
@@ -250,7 +250,7 @@ if current_db_version <= required_version:
 Need to run migrations up to v15
 ```
 
-Networking: checking whether a packet's size is within (or exceeds) the network's MTU (Maximum Transmission Unit) before sending.
+checking whether a packet's size is within (or exceeds) the network's MTU (Maximum Transmission Unit) before sending.
 
 ```python
 class Packet:
@@ -275,7 +275,7 @@ True
 False
 ```
 
-Cloud: checking if current resource utilization is at or above an auto-scaling threshold.
+checking if current resource utilization is at or above an auto-scaling threshold.
 
 ```python
 class ResourceUsage:
@@ -350,7 +350,7 @@ print(next_to_run)
 PID 102 (priority 9)
 ```
 
-DSA: comparing two `TreeNode` values while building or balancing a binary search tree.
+comparing two `TreeNode` values while building or balancing a binary search tree.
 
 ```python
 class TreeNode:
@@ -443,7 +443,7 @@ Now both `e * t` and `t * e` work.
 
 **More Examples — `__mul__` in Real Development**
 
-Cloud: computing a cloud bill by multiplying a resource's hourly rate by the number of hours it ran — the same pattern as the `Employee * TimeSheet` example, just for infra billing.
+computing a cloud bill by multiplying a resource's hourly rate by the number of hours it ran — the same pattern as the `Employee * TimeSheet` example, just for infra billing.
 
 ```python
 class CloudResource:
@@ -471,7 +471,7 @@ print(f"Bill: ${vm * usage:.2f}")
 Bill: $70.08
 ```
 
-Networking: computing total data transferred by multiplying bandwidth (Mbps) by duration (seconds).
+computing total data transferred by multiplying bandwidth (Mbps) by duration (seconds).
 
 ```python
 class Bandwidth:
@@ -498,7 +498,7 @@ print(f"Total transferred: {link * window} megabits")
 Total transferred: 6000 megabits
 ```
 
-DSA: scaling a `Matrix`-like row-vector by a scalar, a common building block in numerical/DSA problems before reaching for NumPy.
+scaling a `Matrix`-like row-vector by a scalar, a common building block in numerical/DSA problems before reaching for NumPy.
 
 ```python
 class Vector:
@@ -648,7 +648,7 @@ print(final_filter)
 QueryFilter({'is_active': True, 'role': 'admin'})
 ```
 
-DBMS: combining two `WHERE` clause builders into a single condition, useful when building a query dynamically across multiple service layers.
+combining two `WHERE` clause builders into a single condition, useful when building a query dynamically across multiple service layers.
 
 ```python
 class WhereClause:
@@ -671,7 +671,7 @@ print(f"SELECT * FROM users WHERE {combined}")
 SELECT * FROM users WHERE age > 18 AND country = 'IN'
 ```
 
-Networking: combining two route segments into a single network path, similar to how routers build up a full path from hop-by-hop segments.
+combining two route segments into a single network path, similar to how routers build up a full path from hop-by-hop segments.
 
 ```python
 class RouteSegment:
@@ -729,7 +729,7 @@ The result of `b1 + b2 * b3 + b4` is `11` because Python evaluates `*` before `+
 
 **More Examples — Mixing `+` and `*` in Real Development**
 
-Cloud: a common billing formula — `total = base_fee + (usage * rate)` — works naturally once both operators are overloaded, and Python's normal precedence (`*` before `+`) applies exactly as expected.
+a common billing formula — `total = base_fee + (usage * rate)` — works naturally once both operators are overloaded, and Python's normal precedence (`*` before `+`) applies exactly as expected.
 
 ```python
 class Cost:
@@ -839,7 +839,7 @@ print(f"Request completed: {resp}")
 Request completed: [200] /api/v1/users (42ms)
 ```
 
-DBMS: a database row/record object whose `__str__` prints a friendly summary, useful when printing query results while debugging.
+a database row/record object whose `__str__` prints a friendly summary, useful when printing query results while debugging.
 
 ```python
 class UserRow:
@@ -859,7 +859,7 @@ print(row)
 User#101: Akshay Redekar <akshay@example.com>
 ```
 
-Networking: printing an IP packet in a log-friendly format instead of the default object representation.
+printing an IP packet in a log-friendly format instead of the default object representation.
 
 ```python
 class IPPacket:
@@ -918,7 +918,7 @@ The rule, in plain English:
 
 **More Examples — `__str__` vs `__repr__` in Real Development**
 
-DBMS: a `DBConnection` object where `__str__` gives a safe, human-friendly summary (no password), while `__repr__` gives an unambiguous, developer-facing view for debugging in logs.
+a `DBConnection` object where `__str__` gives a safe, human-friendly summary (no password), while `__repr__` gives an unambiguous, developer-facing view for debugging in logs.
 
 ```python
 class DBConnection:
@@ -944,7 +944,7 @@ Connected to db.internal:5432 as app_user
 DBConnection(host='db.internal', port=5432, user='app_user')
 ```
 
-Cloud: a `CloudResource` object where `__repr__` is round-trippable (mirrors constructor args), which is exactly what you want when logging objects for later debugging or replay.
+a `CloudResource` object where `__repr__` is round-trippable (mirrors constructor args), which is exactly what you want when logging objects for later debugging or replay.
 
 ```python
 class CloudResource:
@@ -1042,7 +1042,7 @@ Looking up user by numeric ID: 42
 Looking up user by slug/username: akshay-redekar
 ```
 
-DSA: a generic `search` function that works whether you pass a `list`, a `set`, or a `dict` — one function, many container types, thanks to duck typing.
+a generic `search` function that works whether you pass a `list`, a `set`, or a `dict` — one function, many container types, thanks to duck typing.
 
 ```python
 def search(container, target):
@@ -1061,7 +1061,7 @@ False
 True
 ```
 
-Networking: a `send()` method that accepts either `str` or `bytes` and normalizes internally, similar to how socket libraries handle mixed input.
+a `send()` method that accepts either `str` or `bytes` and normalizes internally, similar to how socket libraries handle mixed input.
 
 ```python
 class Socket:
@@ -1167,7 +1167,7 @@ This pattern is what you will see in real codebases — a single method that ada
 
 **More Examples — `*args` / `**kwargs` in Real Development**
 
-DBMS: building a dynamic `WHERE` clause from an arbitrary number of keyword filters — exactly how many ORMs implement `.filter(**kwargs)`.
+building a dynamic `WHERE` clause from an arbitrary number of keyword filters — exactly how many ORMs implement `.filter(**kwargs)`.
 
 ```python
 class QueryBuilder:
@@ -1187,7 +1187,7 @@ country = 'IN' AND role = 'admin'
 country = 'IN' AND role = 'admin' AND is_active = 'true'
 ```
 
-Cloud: a cloud API client function that accepts a variable set of config overrides, the same idiom used by SDKs like boto3 for optional keyword parameters.
+a cloud API client function that accepts a variable set of config overrides, the same idiom used by SDKs like boto3 for optional keyword parameters.
 
 ```python
 class CloudClient:
@@ -1283,7 +1283,7 @@ http://127.0.0.1:8000 (debug=True)
 http://0.0.0.0:80 (debug=False)
 ```
 
-DBMS: a `DBConnection` class that can be constructed with just a database name (using default host/port) or with every parameter fully specified.
+a `DBConnection` class that can be constructed with just a database name (using default host/port) or with every parameter fully specified.
 
 ```python
 class DBConnection:
@@ -1340,7 +1340,7 @@ argument 5: 71
 
 **More Examples — Variable-Length Constructor in Real Development**
 
-Networking: a `Packet` class that accepts a variable number of header segments, since real protocol stacks (Ethernet, IP, TCP) wrap a packet in a variable number of headers.
+a `Packet` class that accepts a variable number of header segments, since real protocol stacks (Ethernet, IP, TCP) wrap a packet in a variable number of headers.
 
 ```python
 class Packet:
@@ -1363,7 +1363,7 @@ print(p2)
 ['Ethernet', 'IP', 'TCP'] -> data
 ```
 
-DSA: a `TreeNode` (or general graph node) that can be constructed with any number of children, useful for n-ary trees rather than strictly binary ones.
+a `TreeNode` (or general graph node) that can be constructed with any number of children, useful for n-ary trees rather than strictly binary ones.
 
 ```python
 class TreeNode:
@@ -1387,7 +1387,7 @@ print(root)
 A -> ['B', 'C', 'D']
 ```
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Overload < by marks

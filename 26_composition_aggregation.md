@@ -116,7 +116,7 @@ The decision rule:
 - If you want to **extend** existing functionality with more functionality, use IS-A (inheritance).
 - If you want to **use** existing functionality as-is, use HAS-A (composition).
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: IS-A — child extends parent
@@ -358,7 +358,7 @@ DurgaSoft
 Durga
 ```
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Composition — created inside, dies with the owner
@@ -754,7 +754,7 @@ The decision rule:
 
 The general design principle in OOP is: **prefer composition over inheritance** unless the relationship is truly a specialization. Composition is more flexible, easier to test, and harder to misuse.
 
-### **Try it in Jupyter — Small Examples**
+### **Examples**
 
 ```python
 # Example 1: Composition — Engine inside Car
